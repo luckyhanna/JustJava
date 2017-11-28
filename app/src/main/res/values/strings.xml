@@ -3,4 +3,6 @@
     <string name="quantity">Quantity</string>
     <string name="orderButton">Order</string>
     <string name="price">Price</string>
+    <string name="incrementButton">+</string>
+    <string name="decrementButton">-</string>
 </resources>
