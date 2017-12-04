@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * This methos enables/disables a button
+     * This method enables/disables a button
      * @param id - id of the button
      * @param enabled - the state you want to put the button in
      */
