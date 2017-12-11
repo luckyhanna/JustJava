@@ -23,15 +23,26 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         setButtonEnabled(R.id.minus_button, false);
         display(quantity);
-        displayPrice(quantity * plainCoffeePrice);
+        // update price too
+//        displayPrice(quantity * plainCoffeePrice);
     }
 
     /**
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-//        display(quantity);
-//        displayPrice(quantity * plainCoffeePrice);
+        String priceMessage = "Total: $" + (quantity * plainCoffeePrice);
+        priceMessage = priceMessage + " \nThank you!";
+        displayMessage(priceMessage);
+    }
+
+    /**
+     * This method displays the given text on the screen
+     * @param message - the text to show
+     */
+    private void displayMessage(String message) {
+        TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
+        priceTextView.setText(message);
     }
 
     /**
@@ -57,7 +68,8 @@ public class MainActivity extends AppCompatActivity {
     public void incrementQuantity(View view) {
         quantity = quantity + 1;
         display(quantity);
-        displayPrice(quantity * plainCoffeePrice);
+        // update price too
+//        displayPrice(quantity * plainCoffeePrice);
         if (quantity == 1) {
             setButtonEnabled(R.id.minus_button, true);
         }
@@ -69,7 +81,8 @@ public class MainActivity extends AppCompatActivity {
     public void decrementQuantity(View view) {
         quantity = quantity - 1;
         display(quantity);
-        displayPrice(quantity * plainCoffeePrice);
+        // update price too
+//        displayPrice(quantity * plainCoffeePrice);
         if (quantity == 0) {
             setButtonEnabled(R.id.minus_button, false);
         }
