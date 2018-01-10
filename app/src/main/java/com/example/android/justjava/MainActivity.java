@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setButtonEnabled(R.id.minus_button, false);
-        display(quantity);
+        displayQuantity(quantity);
         // update price too
 //        displayPrice(quantity * plainCoffeePrice);
     }
@@ -31,9 +31,31 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-        String priceMessage = "Total: $" + (quantity * plainCoffeePrice);
-        priceMessage = priceMessage + " \nThank you!";
-        displayMessage(priceMessage);
+        float price = calculatePrice();
+        String orderSummary = createOrderSummary(price);
+        displayMessage(orderSummary);
+    }
+
+    /**
+     * This method creates the order summary text.
+     *
+     * @param price is the totl price of the order
+     * @return the order summary
+     */
+    private String createOrderSummary(float price) {
+        String message = "Name: Hanna";
+        message += "\nQuantity: " + quantity;
+        message += "\nTotal: $" + price;
+        message += "\nThank you!";
+        return message;
+    }
+
+    /**
+     * This method calculates the price for the current order
+     * @return the total price for the given input parameters
+     */
+    public float calculatePrice() {
+        return quantity * plainCoffeePrice;
     }
 
     /**
@@ -41,25 +63,16 @@ public class MainActivity extends AppCompatActivity {
      * @param message - the text to show
      */
     private void displayMessage(String message) {
-        TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
-        priceTextView.setText(message);
+        TextView orderSummaryTextView = (TextView) findViewById(R.id.order_summary_text_view);
+        orderSummaryTextView.setText(message);
     }
 
     /**
      * This method displays the given quantity value on the screen.
      */
-    private void display(int number) {
+    private void displayQuantity(int quantity) {
         TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
-        quantityTextView.setText("" + number);
-    }
-
-    /**
-     * This method displays the price for the selected quantity
-     */
-    private void displayPrice(float number) {
-        TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
-//        priceTextView.setText("$" + number);
-        priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
+        quantityTextView.setText("" + quantity);
     }
 
     /**
@@ -67,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void incrementQuantity(View view) {
         quantity = quantity + 1;
-        display(quantity);
+        displayQuantity(quantity);
         // update price too
 //        displayPrice(quantity * plainCoffeePrice);
         if (quantity == 1) {
@@ -80,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void decrementQuantity(View view) {
         quantity = quantity - 1;
-        display(quantity);
+        displayQuantity(quantity);
         // update price too
 //        displayPrice(quantity * plainCoffeePrice);
         if (quantity == 0) {
