@@ -5,6 +5,8 @@ import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import java.text.NumberFormat;
@@ -16,6 +18,11 @@ public class MainActivity extends AppCompatActivity {
 
     int quantity = 0;
     float plainCoffeePrice = 5f;
+    float whippedCreamPrice = 1f;
+    float chocolatePrice = 2f;
+    boolean hasWhippedCream = false;
+    boolean hasChocolate = false;
+    String myName = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +38,13 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
+        CheckBox whippedCreamCheckBox = (CheckBox) findViewById(R.id.whipped_cream_checkbox);
+        hasWhippedCream = whippedCreamCheckBox.isChecked();
+        CheckBox chocolateCheckBox = (CheckBox) findViewById(R.id.chocolate_checkbox);
+        hasChocolate = chocolateCheckBox.isChecked();
+        EditText nameInput = (EditText) findViewById(R.id.name_input);
+        myName = nameInput.getText().toString();
+
         float price = calculatePrice();
         String orderSummary = createOrderSummary(price);
         displayMessage(orderSummary);
@@ -43,7 +57,9 @@ public class MainActivity extends AppCompatActivity {
      * @return the order summary
      */
     private String createOrderSummary(float price) {
-        String message = "Name: Hanna";
+        String message = "Name: " + myName;
+        message += "\nAdded whipped cream? " + (hasWhippedCream ? "Yes" : "No");
+        message += "\nAdded chocolate? " + (hasChocolate ? "Yes" : "No");
         message += "\nQuantity: " + quantity;
         message += "\nTotal: $" + price;
         message += "\nThank you!";
@@ -55,7 +71,14 @@ public class MainActivity extends AppCompatActivity {
      * @return the total price for the given input parameters
      */
     public float calculatePrice() {
-        return quantity * plainCoffeePrice;
+        float basePrice = plainCoffeePrice;
+        if (hasWhippedCream) {
+            basePrice += whippedCreamPrice;
+        }
+        if (hasChocolate) {
+            basePrice += chocolatePrice;
+        }
+        return quantity * basePrice;
     }
 
     /**
@@ -110,4 +133,5 @@ public class MainActivity extends AppCompatActivity {
         Button button = (Button) findViewById(id);
         button.setEnabled(enabled);
     }
+
 }
