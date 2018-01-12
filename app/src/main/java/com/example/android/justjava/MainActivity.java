@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.NumberFormat;
 
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setButtonEnabled(R.id.minus_button, false);
+        setButtonEnabled(R.id.order_button, false);
         displayQuantity(quantity);
         // update price too
 //        displayPrice(quantity * plainCoffeePrice);
@@ -108,6 +110,11 @@ public class MainActivity extends AppCompatActivity {
 //        displayPrice(quantity * plainCoffeePrice);
         if (quantity == 1) {
             setButtonEnabled(R.id.minus_button, true);
+            setButtonEnabled(R.id.order_button, true);
+        } else if (quantity == 5) {
+            setButtonEnabled(R.id.plus_button, false);
+            Toast toast = Toast.makeText(this, "Staaaahp! No more coffee for you!",Toast.LENGTH_SHORT);
+            toast.show();
         }
     }
 
@@ -121,6 +128,11 @@ public class MainActivity extends AppCompatActivity {
 //        displayPrice(quantity * plainCoffeePrice);
         if (quantity == 0) {
             setButtonEnabled(R.id.minus_button, false);
+            setButtonEnabled(R.id.order_button, false);
+            Toast toast = Toast.makeText(this, "Get some coffee!",Toast.LENGTH_SHORT);
+            toast.show();
+        } else if (quantity == 4) {
+            setButtonEnabled(R.id.plus_button, true);
         }
     }
 
