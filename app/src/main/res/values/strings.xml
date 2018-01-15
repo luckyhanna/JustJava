@@ -46,4 +46,7 @@
     <string name="no">No</string>
     <!-- The subject of the order email -->
     <string name="order_email_subject">JustJava order for <xliff:g id="name" example="Amy">%s</xliff:g></string>
+
+    <!-- Message for missing name -->
+    <string name="name_missing">Please give us your name!</string>
 </resources>

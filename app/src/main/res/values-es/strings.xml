@@ -19,4 +19,5 @@
     <string name="no">No</string>
     <string name="no_more_coffee">¡No más café!</string>
     <string name="no_coffee">¡Toma un café!</string>
+    <string name="name_missing">Por favor complete su nombre!</string>
 </resources>

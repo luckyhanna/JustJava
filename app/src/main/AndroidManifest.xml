@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/MyTheme"> <!--default: "@style/AppTheme"-->
-        <activity android:name=".MainActivity" >  <!--I can put the android:theme here-->
+        <activity android:name=".MainActivity"
+            android:windowSoftInputMode="stateVisible|adjustPan">  <!--I can put the android:theme here-->
             <!--android:windowSoftInputMode="stateAlwaysHidden"-->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

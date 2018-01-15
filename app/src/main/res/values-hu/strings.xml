@@ -20,5 +20,6 @@
     <string name="no">Nem</string>
     <string name="order_email_subject">CsakJava rendelés <xliff:g id="name" example="Amy">%s</xliff:g> részére</string>
     <string name="no_more_coffee">Túl sok kávéééé!</string>
-    <string name="no_coffee">Igyál kávét!</string>
+    <string name="no_coffee">Igyál egy kis kávét!</string>
+    <string name="name_missing">Kérünk add meg a neved!</string>
 </resources>
