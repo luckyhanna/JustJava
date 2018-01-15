@@ -105,7 +105,7 @@
                 android:text="@string/incrementButton" />
         </LinearLayout>
 
-        <TextView
+        <!--<TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
@@ -118,7 +118,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#000000"
-            android:textSize="16sp" />
+            android:textSize="16sp" />-->
 
         <Button
             android:id="@+id/order_button"
