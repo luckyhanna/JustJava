@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">Doar Java</string>
+    <string name="name_hint">Nume</string>
+    <string name="quantity">Cantitate</string>
+    <string name="toppings">Toppinguri</string>
+    <string name="whipped_cream">Frișcă</string>
+    <string name="chocolate">Ciocolată</string>
+    <string name="order_button">Comandă</string>
+    <string name="order_summary">Detalii comandă</string>
+    <string name="increment_button">+</string>
+    <string name="decrement_button">-</string>
+    <string name="order_summary_thank_you">Mulțumesc!</string>
+    <string name="order_summary_whipped_cream">"Cu frișcă? "</string>
+    <string name="order_summary_chocolate">"Cu ciocolată? "</string>
+    <string name="order_summary_quantity">Cantitate: <xliff:g id="quantity" example="2">%d</xliff:g></string>
+    <string name="yes">Da</string>
+    <string name="no">Nu</string>
+    <string name="order_summary_name">Nume: <xliff:g id="name" example="Amy">%s</xliff:g></string>
+    <string name="order_email_subject">Comandă DoarJava pentru <xliff:g id="name" example="Amy">%s</xliff:g></string>
+    <string name="order_summary_total">Total: <xliff:g id="price" example="123 RON">%s</xliff:g></string>
+    <string name="no_more_coffee">Prea multă cafeaaa!</string>
+    <string name="no_coffee">Ia niște cafea!</string>
+</resources>

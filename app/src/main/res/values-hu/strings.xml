@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">Csak Java</string>
+    <string name="name_hint">Név</string>
+    <string name="quantity">Mennyiség</string>
+    <string name="toppings">Feltétek</string>
+    <string name="whipped_cream">Tejszínhab</string>
+    <string name="chocolate">Csoki</string>
+    <string name="order_button">Rendel</string>
+    <string name="order_summary">Rendelés</string>
+    <string name="increment_button">+</string>
+    <string name="decrement_button">-</string>
+    <string name="order_summary_thank_you">Köszönöm!</string>
+    <string name="order_summary_name">Név: <xliff:g id="name" example="Amy">%s</xliff:g></string>
+    <string name="order_summary_whipped_cream">"Tejszínhabbal? "</string>
+    <string name="order_summary_chocolate">"Csokival? "</string>
+    <string name="order_summary_quantity">Mennyiség: <xliff:g id="quantity" example="2">%d</xliff:g></string>
+    <string name="order_summary_total">Összeg: <xliff:g id="price" example="123ft">%s</xliff:g></string>
+    <string name="yes">Igen</string>
+    <string name="no">Nem</string>
+    <string name="order_email_subject">CsakJava rendelés <xliff:g id="name" example="Amy">%s</xliff:g> részére</string>
+    <string name="no_more_coffee">Túl sok kávéééé!</string>
+    <string name="no_coffee">Igyál kávét!</string>
+</resources>

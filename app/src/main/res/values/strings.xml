@@ -1,12 +1,49 @@
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Title for the application. [CHAR LIMIT=12] -->
     <string name="app_name">Just Java</string>
-    <string name="nameHint">Name</string>
+    <!-- Hint text display in the empty field for the user's name [CHAR LIMIT=20] -->
+    <string name="name_hint">Name</string>
+    <!-- Header text for the quantity [CHAR LIMIT=20] -->
     <string name="quantity">Quantity</string>
+
+    <!-- Header text for the list of toppings [CHAR LIMIT=20] -->
     <string name="toppings">Toppings</string>
-    <string name="whippedCream">Whipped cream</string>
+    <!-- Label for whipped cream topping option -->
+    <string name="whipped_cream">Whipped cream</string>
+    <!-- Label for chocolate topping option -->
     <string name="chocolate">Chocolate</string>
-    <string name="orderButton">Order</string>
-    <string name="orderSummary">Order summary</string>
-    <string name="incrementButton">+</string>
-    <string name="decrementButton">-</string>
+    <!-- Label for order button -->
+    <string name="order_button">Order</string>
+    <!-- Header for order summary - UNUSED -->
+    <string name="order_summary">Order summary</string>
+    <!-- Label for increment button -->
+    <string name="increment_button">+</string>
+    <!-- Label for decrement button -->
+    <string name="decrement_button">-</string>
+
+    <!-- Toast message for too many coffees -->
+    <string name="no_more_coffee">Staaaahp! No more coffee for you!</string>
+    <!-- Toast message for zero coffees -->
+    <string name="no_coffee">Get some coffee!</string>
+
+    <!-- Thank you message for the order summary. [CHAR LIMIT=NONE] -->
+    <string name="order_summary_thank_you">Thank you!</string>
+    <!-- Name for the order summary. It will be shown in the format: "Name: Amy"
+        where Amy is the user's name. [CHAR LIMIT=NONE] -->
+    <string name="order_summary_name">Name: <xliff:g id="name" example="Amy">%s</xliff:g></string>
+    <!-- Whipped cream message for the order summary -->
+    <string name="order_summary_whipped_cream">Added whipped cream? </string>
+    <!-- Chocolate message for the order summary -->
+    <string name="order_summary_chocolate">Added chocolate? </string>
+    <!-- Quantity message for the order summary -->
+    <string name="order_summary_quantity">Quantity: <xliff:g id="quantity" example="2">%d</xliff:g></string>
+    <!-- Total price message for the ordar summary. It will be shown in the format: "Total: $100"
+        where $100 is the price containing the currency-->
+    <string name="order_summary_total">Total: <xliff:g id="price" example="$123">%s</xliff:g></string>
+    <!-- Yes message -->
+    <string name="yes">Yes</string>
+    <!-- No message -->
+    <string name="no">No</string>
+    <!-- The subject of the order email -->
+    <string name="order_email_subject">JustJava order for <xliff:g id="name" example="Amy">%s</xliff:g></string>
 </resources>

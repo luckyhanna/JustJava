@@ -19,7 +19,7 @@
             android:id="@+id/name_input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/nameHint"
+            android:hint="@string/name_hint"
             android:inputType="textCapWords"
             android:layout_marginBottom="16dp"
             />
@@ -46,7 +46,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="24dp"
-                android:text="@string/whippedCream"
+                android:text="@string/whipped_cream"
                 android:textSize="16sp" />
         </LinearLayout>
 
@@ -87,7 +87,7 @@
                 android:layout_height="48dp"
                 android:layout_marginRight="8dp"
                 android:onClick="decrementQuantity"
-                android:text="@string/decrementButton" />
+                android:text="@string/decrement_button" />
 
             <TextView
                 android:id="@+id/quantity_text_view"
@@ -102,7 +102,7 @@
                 android:layout_height="48dp"
                 android:layout_marginLeft="8dp"
                 android:onClick="incrementQuantity"
-                android:text="@string/incrementButton" />
+                android:text="@string/increment_button" />
         </LinearLayout>
 
         <!--<TextView
@@ -110,7 +110,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:layout_marginTop="16dp"
-            android:text="@string/orderSummary"
+            android:text="@string/order_summary"
             android:textAllCaps="true" />
 
         <TextView
@@ -127,7 +127,7 @@
             android:layout_marginBottom="16dp"
             android:layout_marginTop="16dp"
             android:onClick="submitOrder"
-            android:text="@string/orderButton" />
+            android:text="@string/order_button" />
 
 
     </LinearLayout>
