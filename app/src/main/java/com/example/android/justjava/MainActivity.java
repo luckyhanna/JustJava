@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         // send email
         Intent intent = new Intent(Intent.ACTION_SENDTO);
         intent.setData(Uri.parse("mailto:"));
-        intent.putExtra(Intent.EXTRA_SUBJECT, "JustJava order for " + myName);
+        intent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.order_email_subject, myName));
         intent.putExtra(Intent.EXTRA_TEXT, orderSummary);
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
@@ -78,12 +78,12 @@ public class MainActivity extends AppCompatActivity {
      * @return the order summary
      */
     private String createOrderSummary(float price) {
-        String message = "Name: " + myName;
-        message += "\nAdded whipped cream? " + (hasWhippedCream ? "Yes" : "No");
-        message += "\nAdded chocolate? " + (hasChocolate ? "Yes" : "No");
-        message += "\nQuantity: " + quantity;
-        message += "\nTotal: $" + price;
-        message += "\nThank you!";
+        String message = getString(R.string.order_summary_name, myName);
+        message += "\n" + getString(R.string.order_summary_whipped_cream) + (hasWhippedCream ? getString(R.string.yes) : getString(R.string.no));
+        message += "\n" + getString(R.string.order_summary_chocolate) + (hasChocolate ? getString(R.string.yes) : getString(R.string.no));
+        message += "\n" + getString(R.string.order_summary_quantity, quantity);
+        message += "\n" + getString(R.string.order_summary_total, NumberFormat.getCurrencyInstance().format(price)); // TODO: 2 decimals!!!!
+        message += "\n" + getString(R.string.order_summary_thank_you);
         return message;
     }
 
@@ -132,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
             setButtonEnabled(R.id.order_button, true);
         } else if (quantity == 5) {
             setButtonEnabled(R.id.plus_button, false);
-            Toast toast = Toast.makeText(this, "Staaaahp! No more coffee for you!",Toast.LENGTH_SHORT);
+            Toast toast = Toast.makeText(this, getString(R.string.no_more_coffee),Toast.LENGTH_SHORT);
             toast.show();
         }
     }
@@ -148,7 +148,7 @@ public class MainActivity extends AppCompatActivity {
         if (quantity == 0) {
             setButtonEnabled(R.id.minus_button, false);
             setButtonEnabled(R.id.order_button, false);
-            Toast toast = Toast.makeText(this, "Get some coffee!",Toast.LENGTH_SHORT);
+            Toast toast = Toast.makeText(this, getString(R.string.no_coffee),Toast.LENGTH_SHORT);
             toast.show();
         } else if (quantity == 4) {
             setButtonEnabled(R.id.plus_button, true);
